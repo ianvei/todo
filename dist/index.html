@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="main.js" defer></script>
+    <title>Todo</title>
+</head>
+<body>
+    <div class="main-site">
+        <div class="header">
+            <h1>To-do list</h1>
+        </div>
+        <div class="content">
+            <div class="left-content">
+                <form id="new-category">
+                    <input type="text" name="category" id="new-category-name" placeholder="New category">
+                    <input type="submit" value="+" class="category-submit">
+                </form>
+                <div class="category-card">
+                    <div class="category-container">
+                        <p>Default Container</p>
+                        <img>X</imd>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="right-container">
+                    <form id="todo-item">
+                        <input type="text" name="task-name" id="task-name" placeholder="New task">
+                        <input type="date" name="task-date" id="task-date">
+                        <select name="task-priority" id="task-priority">
+                            <option value="urgent">High Priority</option>
+                            <option value="normal">Medium Priority</option>
+                            <option value="normal">Low Priority</option>
+                        </select>
+                        <input type="submit" value="+">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
