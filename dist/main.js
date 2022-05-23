@@ -1,1 +1,1 @@
-console.log("hello");
+(()=>{"use strict";let e=new FormData(document.querySelector("#new-category"));document.querySelector(".category-submit").addEventListener("click",(function(t){return console.log("clicked"),t.preventDefault(),e=new FormData(document.querySelector("#new-category"))}));let t=new class{constructor(e){this.formdata=e}};console.log(t(e)),console.log("hello")})();

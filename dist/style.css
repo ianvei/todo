@@ -97,3 +97,26 @@
 .category-submit{
    max-width: 40%;
 }
+
+.todo-item-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    background-color: aquamarine;
+}
+
+.todo-item{
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    gap: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.task-name{
+    width: 80%;
+}
