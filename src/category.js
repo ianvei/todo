@@ -21,7 +21,7 @@ export default class Category{
             this["identifier"] = newCategory.category + Math.floor(Math.random()*(999-100+1)+100)
             // newCategory[key] = value
             // newCategory['identifier'] = newCategory.category + Math.floor(Math.random()*(999-100+1)+100)
-            
+            // there is an issue with this, its creating an object within an object. 2 ways to fix this, ONE: harder, but maybe more correct is to make it so this method updates the main class, or TWO: easier: just make this method create the category, and have taskList inside of the category, not the overarching Class
           } 
         return newCategory;
     }
