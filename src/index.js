@@ -18,7 +18,7 @@ categoryStatus.setName('default')
 
 categoryForm.onsubmit = function(e) {
   let newCategory = testCategory.createNewCategory()
-  let testingCategory = new Category(document.getElementById('new-category'), document.querySelector('.category-card'))
+  // let testingCategory = new Category(document.getElementById('new-category'), document.querySelector('.category-card'))
   let updateCategory = new PostCategory()
   // console.log(updateCategory)
   updateCategory.updateCategoryDom(newCategory, categoryStatus);
@@ -30,7 +30,7 @@ categoryForm.onsubmit = function(e) {
   // console.log(currentCategory)
   // 
   // console.log(`I am in index ${JSON.stringify(categoryStatus)}`)
-  console.log(`this is testing category ${JSON.stringify(testingCategory)}`)
+  // console.log(`this is testing category ${JSON.stringify(testingCategory)}`)
   console.log(categoryStatus.getName())
   console.log(currentCategories)
   e.preventDefault();
@@ -42,7 +42,9 @@ taskForm.onsubmit = function(e) {
   console.log('pingas')
   for(let category of currentCategories){
     if(category.identifier === categoryStatus.getName()){
-      // category.pushTask('test')
+      let newTaskObject = new Task
+      
+      category.addTask(newTaskObject.createNewTask())
       console.log(category)
     }
 
