@@ -18,7 +18,32 @@ let taskDeleter = new PostCategory
 categoryStatus.setName('default')
 
 
-
+let addTaskListeners = function(){
+  let todoNodeArray = document.querySelectorAll('.todo-item')
+  console.log(todoNodeArray)
+  for (let todo of todoNodeArray){
+    let todoDelete = todo.querySelector('span')
+    todoDelete.addEventListener('click', () => {
+      console.log('hello')
+      // if(todoDelete.id === todo.id){ //THIS
+        todo.remove()
+        for(let category of currentCategories){
+          // console.log(category)
+          for(let task of category.taskList){
+            if(task.identifier === todo.id){
+              console.log(category)
+              let index = category.taskList.indexOf(task)
+              category.taskList.splice(index, 1)
+            }
+          }
+        }
+        console.log(`I am ${todo.id}`)
+      // } //THIS
+      // console.log(todoDelete)
+    })
+    
+  }
+}
 
 
 
@@ -37,11 +62,13 @@ categoryForm.onsubmit = function(e) {
     categoryP.addEventListener('click', () => {
       console.log('IM CLICKED')
       taskDeleter.deleteTaskDom();
+      // addTaskListeners();
       console.log(category.id)
       for(let object of currentCategories){
         if(object.identifier === category.id){
           for(let task of object.taskList){
             taskDeleter.updateTaskDom(task)
+            addTaskListeners();
           }
         }
       }
@@ -81,30 +108,7 @@ taskForm.onsubmit = function(e) {
     
   }
 
-  let todoNodeArray = document.querySelectorAll('.todo-item')
-  console.log(todoNodeArray)
-  for (let todo of todoNodeArray){
-    let todoDelete = todo.querySelector('span')
-    todoDelete.addEventListener('click', () => {
-      console.log('hello')
-      // if(todoDelete.id === todo.id){ //THIS
-        // todo.remove()
-        for(let category of currentCategories){
-          // console.log(category)
-          for(let task of category.taskList){
-            if(task.identifier === todo.id){
-              console.log(category)
-              let index = category.taskList.indexOf(task)
-              category.taskList.splice(index, 1)
-            }
-          }
-        }
-        console.log(`I am ${todo.id}`)
-      // } //THIS
-      // console.log(todoDelete)
-    })
-    
-  }
+  addTaskListeners()
   // for (let task of taskDeleteArray){
   //   console.log(task)
   //   task.addEventListener('click', () => {
