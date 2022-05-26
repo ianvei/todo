@@ -31,7 +31,8 @@ export default class PostCategory{
 
         let deleteCategory = document.createElement('span')
         deleteCategory.classList.add('material-symbols-outlined')
-        deleteCategory.classList.add('categoryDelete')
+        deleteCategory.classList.add(`categoryDelete`)
+        deleteCategory.setAttribute('id', `${category.identifier}`)
         deleteCategory.innerText = 'delete'
 
         newCategoryText.textContent = category.category
@@ -64,6 +65,7 @@ export default class PostCategory{
         let deleteTask = document.createElement('span')
         deleteTask.classList.add('material-symbols-outlined')
         deleteTask.classList.add('taskDelete')
+        deleteTask.setAttribute('id', `${task.identifier}`)
         deleteTask.innerText = 'delete'
 
         newTaskDiv.appendChild(name)
