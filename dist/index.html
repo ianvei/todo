@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <script src="main.js" defer></script>
     <title>Todo</title>
 </head>
@@ -27,7 +28,9 @@
                 <div class="category-card">
                     <div class="category-container">
                         <p>Default Container</p>
-                        <img>X</img>
+                        <span class="material-symbols-outlined">
+                            delete
+                            </span>
                     </div>
                     
                 </div>
@@ -38,9 +41,9 @@
                         <input type="text" name="task-name" id="task-name" placeholder="New task">
                         <input type="date" name="task-date" id="task-date">
                         <select name="task-priority" id="task-priority">
-                            <option value="urgent">High Priority</option>
-                            <option value="normal">Medium Priority</option>
-                            <option value="normal">Low Priority</option>
+                            <option value="Urgent">High Priority</option>
+                            <option value="Normal">Medium Priority</option>
+                            <option value="Low">Low Priority</option>
                         </select>
                         <input type="submit" value="+">
                     </form>
@@ -49,7 +52,9 @@
                             <div class="task-name">Task Name</div>
                             <div class="date">Date</div>
                             <div class="priority">Urgent</div>
-                            <img src="" alt="">X</img>
+                            <span class="material-symbols-outlined">
+                                delete
+                                </span>
                             <img src="" alt="">E</img>
                         </div>
                     </div>

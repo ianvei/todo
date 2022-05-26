@@ -14,6 +14,7 @@ let currentCategories = []
 
 let testCategory = new Category(document.getElementById('new-category'), document.querySelector('.category-card'))
 let categoryStatus = new CurrentCategory
+let taskDeleter = new PostCategory
 categoryStatus.setName('default')
 
 categoryForm.onsubmit = function(e) {
@@ -31,6 +32,26 @@ categoryForm.onsubmit = function(e) {
   // 
   // console.log(`I am in index ${JSON.stringify(categoryStatus)}`)
   // console.log(`this is testing category ${JSON.stringify(testingCategory)}`)
+  let categoryArray = document.getElementsByClassName('category-container')
+  console.log(categoryArray)
+
+  for (let category of categoryArray){
+    category.addEventListener('click', () => {
+      console.log('IM CLICKED')
+      taskDeleter.deleteTaskDom();
+      console.log(category.id)
+      for(let object of currentCategories){
+        if(object.identifier === category.id){
+          console.log(object)
+          for(let task of object.taskList){
+            taskDeleter.updateTaskDom(task)
+          }
+        }
+        
+      }
+    })
+  }
+  
   console.log(categoryStatus.getName())
   console.log(currentCategories)
   e.preventDefault();
@@ -43,9 +64,11 @@ taskForm.onsubmit = function(e) {
   for(let category of currentCategories){
     if(category.identifier === categoryStatus.getName()){
       let newTaskObject = new Task
-      
-      category.addTask(newTaskObject.createNewTask())
-      console.log(category)
+      let task = newTaskObject.createNewTask()
+      category.addTask(task)
+      let updateTask = new PostCategory;
+      updateTask.updateTaskDom(task)
+      console.log(task["task-name"])
     }
 
   }
